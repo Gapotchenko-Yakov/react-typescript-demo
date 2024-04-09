@@ -6,7 +6,12 @@ import Person from "./components/Person";
 function App() {
   return (
     <div>
-      <Person name={{ first: "John", last: "Smith" }}></Person>
+      <Person
+        name={{ first: "John", last: "Smith" }}
+        age={27}
+        occupation={"engeneer"}
+        alive={true}
+      ></Person>
     </div>
   );
 }
