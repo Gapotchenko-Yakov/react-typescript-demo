@@ -1,14 +1,11 @@
 import "./App.css";
-import Box from "./components/context/Box";
-import { User } from "./components/context/User";
-import { UserContextProvider } from "./components/context/UserContext";
+
+import DomRef from "./components/ref/DomRef";
 
 function App() {
   return (
     <div>
-      <UserContextProvider>
-        <User />
-      </UserContextProvider>
+      <DomRef />
     </div>
   );
 }
