@@ -12,18 +12,16 @@ type Person = {
 
 export type PersonProps = Person;
 
-type I1 = Person["name" | "occupation"];
-type I2 = Person[keyof Person];
+type IdLabel = {};
+type NameLabel = {};
 
-interface IPerson extends Person {}
+type IdOrNameLabel<T extends number | string> = T extends number
+  ? IdLabel
+  : NameLabel;
 
-interface IEmployee extends IPerson {
-  access: 2;
+function createLabel<T extends number | string>(content: T): IdOrNameLabel<T> {
+  throw "unimplemented";
 }
 
-interface INonEmployee extends IPerson {
-  access: false;
-}
-
-type Example1 = IEmployee extends IPerson ? number : string;
-type Example2 = INonEmployee extends IPerson ? number : string;
+let a = createLabel("some text");
+let b = createLabel(12);
