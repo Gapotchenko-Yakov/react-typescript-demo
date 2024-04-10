@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-
-import Container from "./components/Container";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
+import Box from "./components/context/Box";
 
 function App() {
-  const [value, setValue] = useState("some text");
-
   return (
     <div>
-      <Container styles={{ border: "1px solid black", padding: "1rem" }} />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 }
