@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { theme } from "./theme";
 
-const ThemeContext = createContext(theme);
+export const ThemeContext = createContext(theme);
 
 type ThemeContextProviderProps = {
   children: React.ReactNode;
